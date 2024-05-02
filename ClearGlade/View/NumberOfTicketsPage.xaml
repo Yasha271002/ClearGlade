@@ -1,0 +1,108 @@
+﻿<Page x:Class="ClearGlade.View.NumberOfTicketsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClearGlade.View"
+      xmlns:viewModel="clr-namespace:ClearGlade.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="1300"
+      d:DesignWidth="876"
+      Title="NumberOfTicketsPage"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                Style="{StaticResource TextBlockWidth}"
+                FontFamily="{StaticResource Montsserat}"
+                Text="ВЫБИРИТЕ КОЛИЧЕСТВО БИЛЕТОВ"
+                FontSize="80"/>
+            <TextBlock
+                Foreground="#2B6F53"
+                FontFamily="{StaticResource Montsserat}"
+                TextWrapping="Wrap"
+                Width="749"
+                Height="98"
+                TextAlignment="Center"
+                Margin="0,40,0,0">
+                <TextBlock.Inlines>
+                    <Run FontWeight="Light"
+                         FontSize="40"
+                         Text="Стоимость одного билета составляет"/>
+                    <Run FontWeight="Bold"
+                         FontSize="40"
+                         Text=" 100 Р"/>
+                </TextBlock.Inlines>
+            </TextBlock>
+            <Button
+                Style="{StaticResource ButtonStyle}"
+                Margin="0,80,0,0">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid
+                            Style="{StaticResource GridStyle}">
+                            <WrapPanel
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center">
+
+                                <TextBlock
+                                    Name="ButtonMinus"
+                                    Width="67.2"
+                                    Height="11.85"
+                                    Background="White"
+                                    Margin="0,0,80,0"/>
+
+                                <TextBlock
+                                    Name="InputTextBlock"
+                                    Text="{Binding SumNumberModel.Num, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    Width="300"
+                                    Height="141"
+                                    Background="White"
+                                    Foreground="#2B6F53"
+                                    FontSize="70"
+                                    FontWeight="Normal"
+                                    TextAlignment="Center"/>
+                                <TextBlock
+                                    Name="ButtonPlus"
+                                    TextAlignment="Center"
+                                    Text="+"
+                                    Width="67"
+                                    Height="65"
+                                    Foreground="#FFFFFF"
+                                    FontSize="60" Margin="80,0,0,29" MouseLeftButtonDown="ButtonPlus_MouseLeftButtonDown"
+                                    />
+                            </WrapPanel>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <TextBlock
+                Width="775"
+                Foreground="#2B6F53"
+                TextAlignment="Center"
+                Margin="0,100,0,0">
+                <TextBlock.Inlines>
+                    <Run
+                        Text="СУММА: "
+                        FontSize="60"
+                        FontWeight="Light"/>
+                    <Run
+                        Text="{Binding SumNumberModel.Sum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        FontSize="80"
+                        FontWeight="Bold"/>
+                </TextBlock.Inlines>
+            </TextBlock>
+
+            <Button
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding NextPaymentMethodPageCommand}"
+                Margin="0,150,0,0">
+                <TextBlock
+                    Style="{StaticResource ButtonTextStyle}"
+                    Text="ПРОДОЛЖИТЬ"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

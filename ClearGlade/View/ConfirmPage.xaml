@@ -1,0 +1,50 @@
+﻿<Page x:Class="ClearGlade.View.ConfirmPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClearGlade.View"
+      xmlns:viewModel="clr-namespace:ClearGlade.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="1200"
+      d:DesignWidth="775"
+      Title="ConfirmPage">
+
+    <Page.DataContext>
+        <viewModel:ConfirmViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+      <StackPanel>
+          <Image
+              Source="../Images/_icons.png"
+              Width="264"
+              Height="264"
+              Margin="0,0,0,100"/>
+          <TextBlock
+              Style="{StaticResource TextBlockWidth}"
+              Width="775"
+              Height="320"
+              LineHeight="97.52"
+              Text=" ОПЛАТА ПРОШЛА УСПЕШНО"
+              FontSize="80"
+              FontWeight="ExtraBold"/>
+          <TextBlock
+              Style="{StaticResource TextBlockWidth}"
+              Height="49"
+              Width="749"
+              FontSize="40"
+              Margin="0,50,0,0"
+              Text="Не забудьте забрать билет"/>
+
+          <Button 
+              Style="{StaticResource ButtonStyle}"
+              Command="{Binding OnMainPageCommand}"
+              Margin="0,200,0,0">
+              <TextBlock
+                  Style="{StaticResource ButtonTextStyle}"
+                  Text="НА ГЛАВНУЮ"/>
+          </Button>
+        </StackPanel>  
+    </Grid>
+</Page>

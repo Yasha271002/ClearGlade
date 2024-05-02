@@ -1,0 +1,84 @@
+﻿<Page x:Class="ClearGlade.View.PayForTheTicketPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="1300"
+      d:DesignWidth="775"
+      Title="PayForTheTicketPage"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                Style="{StaticResource TextBlockWidth}"
+                Width="749"
+                Text="ОПЛАТИТЕ          БИЛЕТ"
+                FontSize="80"/>
+            <TextBlock
+                Width="749"
+                Height="200"
+                FontSize="30"
+                TextWrapping="Wrap"
+                Foreground="#2B6F53"
+                LineHeight="36.57"
+                TextAlignment="Center"
+                Margin="0,50,0,0">
+                <TextBlock.Inlines>
+                    <Run
+                        Text=" Принятые деньги обратно не возвращаются.      Терминал принимает купюры достоинством "
+                        FontWeight="Light"/>
+                    <Run 
+                        FontWeight="Bold"
+                        Text="               50 Р, 100 Р."/>
+                    <Run
+                        Text=" Помещайте по одной купюре в купюроприемник, когда загорится разрешающий зеленый сигнал."
+                        FontWeight="Light"/>
+                </TextBlock.Inlines>
+            </TextBlock>
+
+            <TextBlock
+                Width="775"
+                Foreground="#2B6F53"
+                TextAlignment="Center"
+                Margin="0,100,0,0">
+                <TextBlock.Inlines>
+                    <Run
+                        Text="Внесено: "
+                        FontSize="60"
+                        FontWeight="Light"/>
+                    <Run
+                        Text="{Binding SumNumberModel.Sum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"
+                        FontSize="80"
+                        FontWeight="Bold"/>
+                </TextBlock.Inlines>
+            </TextBlock>
+
+            <TextBlock
+                Width="775"
+                Foreground="#2B6F53"
+                TextAlignment="Center"
+                Margin="0,100,0,0">
+                <TextBlock.Inlines>
+                    <Run
+                        Text="СУММА: "
+                        FontSize="60"
+                        FontWeight="Light"/>
+                    <Run
+                        Text="{Binding SumNumberModel.Sum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        FontSize="80"
+                        FontWeight="Bold"/>
+                </TextBlock.Inlines>
+            </TextBlock>
+
+            <Button 
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding NextConfirmPageCommand}"
+                Margin="0,200,0,0">
+                <TextBlock
+                    Style="{StaticResource ButtonTextStyle}"
+                    Text="Оплатить"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

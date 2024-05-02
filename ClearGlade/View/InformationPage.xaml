@@ -1,0 +1,29 @@
+﻿<Page x:Class="ClearGlade.View.InformationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClearGlade.View"
+      xmlns:viewModel="clr-namespace:ClearGlade.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="1107"
+      d:DesignWidth="876"
+      Title="InformationPage">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                FontFamily="{StaticResource Montsserat}"
+                Style="{StaticResource TextBlockWidth}"
+                Height="196"
+                Text="УВАЖАЕМЫЕ ПОСЕТИТЕЛИ!"
+                FontSize="80"
+                FontWeight="Bold"/>
+
+            <Label Template="{StaticResource InformationPage}"
+                   Height="911"
+                   Width="850"/>
+
+        </StackPanel>
+    </Grid>
+</Page>

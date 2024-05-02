@@ -1,0 +1,60 @@
+﻿<Page x:Class="ClearGlade.View.PaymentMethodPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClearGlade.View"
+      xmlns:viewModel="clr-namespace:ClearGlade.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="1107"
+      d:DesignWidth="829"
+      Title="PaymentMethodPage"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}">
+        
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                Style="{StaticResource TextBlockWidth}"
+                Text="ВЫБИРИТЕ     СПОСОБ ОПЛАТЫ"
+                Width="829"
+                Height="196"
+                FontSize="80"/>
+
+            <TextBlock
+                Width="774"
+                Height="188"
+                FontFamily="{StaticResource Montsserat}"
+                Foreground="#2B6F53"
+                TextAlignment="Center"
+                Margin="0,180,0,0">
+                <TextBlock.Inlines>
+                    <Run
+                        FontWeight="Normal"
+                        FontSize="60"
+                        Text="СУММА:  "/>
+                    <Run
+                        FontWeight="Bold"
+                        FontSize="80"
+                        Text="{Binding SumNumberModel.Sum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </TextBlock.Inlines>
+            </TextBlock>
+
+            <Button
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding NextPayForTheTicketPageCommand}"
+                Margin="0,50,0,0">
+                <TextBlock 
+                    Style="{StaticResource ButtonTextStyle}"
+                    Text="НАЛИЧНЫЕ"/>
+            </Button>
+            <Button
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding NextPayForTheTicketPageCommand}"
+                Margin="0,100,0,0">
+                <TextBlock
+                    Style="{StaticResource ButtonTextStyle}"
+                    Text="БАНКОВСКАЯ КАРТА"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,151 @@
+﻿<Application x:Class="ClearGlade.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ClearGlade"
+             StartupUri="\View\MainWindow.xaml">
+    <Application.Resources>
+
+        <GeometryGroup x:Key="Minus">
+            <PathGeometry Figures="M27.3 12.425V0.574951H39.9V12.425H27.3ZM0 12.425V0.575001H67.2V12.425H0Z"/>
+        </GeometryGroup>
+
+        <GeometryGroup x:Key="Plus">
+            <PathGeometry Figures="M27.5 66.35V0.650024H40.1V66.35H27.5ZM0.199951 39.5V27.65H67.4V39.5H0.199951Z"></PathGeometry>
+        </GeometryGroup>
+
+        <FontFamily x:Key="Montsserat">\Font\#Montserrat</FontFamily>
+
+        <Style x:Key="ButtonStyle" 
+               TargetType="Button">
+            <Setter Property="Width" Value="775"/>
+            <Setter Property="Height" Value="189"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#1EAB6F" Offset="0.9"/>
+                        <GradientStop Color="#24B1AA" Offset="0.6"/>
+                        <GradientStop Color="#28B4C0" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="GridStyle"
+               TargetType="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#1EAB6F" Offset="0.9"/>
+                        <GradientStop Color="#24B1AA" Offset="0.6"/>
+                        <GradientStop Color="#28B4C0" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="ButtonTextStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="45"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{StaticResource Montsserat}"/>
+        </Style>
+
+        <Style x:Key="TextBlockWidth" TargetType="TextBlock">
+            <Setter Property="Width" Value="876"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Foreground" Value="#2B6F53"/>
+        </Style>
+
+        <ControlTemplate x:Key="InformationPage" TargetType="Label">
+            <Grid
+                Width="664"
+                Height="693">
+                <StackPanel>
+                    <TextBlock
+                        Text="На данном терминале вы моете приобрести билеты на прогулку по территории заповедника."
+                        Foreground="#2B6F53"
+                        FontSize="24"
+                        FontFamily="{StaticResource Montsserat}"
+                        FontWeight="Normal"
+                        TextAlignment="Left"
+                        TextWrapping="Wrap"
+                        Margin="0,50,0,50"/>
+
+                    <TextBlock
+                        Text="ОБРАТИТЕ ВНИМАНИЕ!"
+                        Foreground="#2B6F53"
+                        FontFamily="{StaticResource Montsserat}"
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Margin="0,0,0,10"/>
+
+                    <TextBlock
+                        TextWrapping="Wrap"
+                        FontWeight="Normal"
+                        FontSize="24"
+                        Foreground="#2B6F53"
+                        Margin="40,0,0,0">
+                        Льготные билеты приобретаются в кассе музея (студенты, пенсионеры).<LineBreak /> <LineBreak />Дети до 18-ти лет бесплатно.<LineBreak /><LineBreak /> Прогулку оплачивать не надо, если Вы посещаете музейные здания.<LineBreak /><LineBreak /> Билеты для осмотра Л.Н,Толстого и флигеля Кузминских приобретаются в кассе музея.
+                    </TextBlock>
+
+                    <TextBlock
+                        Text="Билет на прогулку по территории заповедника не предусматривает посещение зданий. Билеты обмену и возврату не подлежат. Терминал сдачи не дает. В случае отмены операции деньги не возвращает."
+                        TextWrapping="Wrap"
+                        FontWeight="Normal"
+                        FontSize="24"
+                        Foreground="#2B6F53"
+                        Margin="0,50,0,0"/>
+                </StackPanel>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="InformationPageTwo" TargetType="Label">
+            <Grid
+                    Width="664"
+                    Height="693">
+                <StackPanel>
+                    <TextBlock
+                            TextWrapping="Wrap"
+                            FontWeight="Normal"
+                            FontSize="24"
+                            Foreground="#2B6F53"
+                            Margin="40,0,0,0">
+                            Льготные билеты приобретаются в кассе музея (студенты, пенсионеры).<LineBreak /> <LineBreak />Дети до 18-ти лет бесплатно.<LineBreak /><LineBreak /> Прогулку оплачивать не надо, если Вы посещаете музейные здания.<LineBreak /><LineBreak /> Билеты для осмотра Л.Н,Толстого и флигеля Кузминских приобретаются в кассе музея.
+                    </TextBlock>
+
+                    <TextBlock
+                            Text="Билет на прогулку по территории заповедника не предусматривает посещение зданий. Билеты обмену и возврату не подлежат. Терминал сдачи не дает. В случае отмены операции деньги не возвращает."
+                            TextWrapping="Wrap"
+                            FontWeight="Normal"
+                            FontSize="24"
+                            Foreground="#2B6F53"
+                            Margin="0,50,0,0"/>
+                </StackPanel>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ButtonBack" TargetType="Button">
+            <Border
+                Background="#FFFFFF">
+                <WrapPanel
+                    Width="437"
+                    Height="73">
+                    <Image
+                        Source="Images/BackArrow.png"
+                        Width="135"/>
+
+                    <TextBlock
+                        Text="НАЗАД"
+                        FontFamily="{StaticResource Montsserat}"
+                        Foreground="#26B3BB"
+                        FontSize="60"
+                        FontWeight="Normal"/>
+                </WrapPanel>
+            </Border>
+        </ControlTemplate>
+    </Application.Resources>
+</Application>

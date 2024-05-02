@@ -1,0 +1,89 @@
+﻿<Window x:Class="ClearGlade.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClearGlade"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="1920"
+        Width="1080" >
+    <Grid>
+        <Image
+            x:Name="BackgroundPageImage"
+            Source="../Images/BackgroundPagesRotate.png"
+            VerticalAlignment="Bottom"
+            Visibility="Hidden"/>
+
+        <Image
+            x:Name="BackgroundRotatePageImage"
+            Source="../Images/BackgroundPagesRotate.png"
+            VerticalAlignment="Top"
+            Visibility="Hidden"
+            RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Image x:Name="MainPageImage"
+                    Source="/Images/MainBackground.png"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom"
+                    Visibility="Visible"/>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0,248,0,0">
+
+            <Frame x:Name="MainFrame"
+                   NavigationUIVisibility="Hidden"/>
+
+            
+        </StackPanel>
+        <WrapPanel
+            Width="166"
+            Height="60"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="864,50,0,0">
+
+            <Image
+                Source="/Images/Russia.png"
+                Width="60"
+                Height="60"/>
+            <Image
+                Source="/Images/UnitedKingdom.png"
+                Height="60"
+                Width="60"
+                Margin="46,0,0,0"/>
+
+        </WrapPanel>
+
+        
+
+        <Button
+            Style="{StaticResource ButtonStyle}"
+            Margin="152,1348,153,367"
+            Visibility="Hidden">
+            <TextBlock
+                Style="{StaticResource ButtonTextStyle}"
+                Text="ПРОДОЛЖИТЬ"/>
+        </Button>
+
+        <Button
+            x:Name="ButtonBack"
+            Template="{StaticResource ButtonBack}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0,1535,0,0"
+            Height="189"
+            Width="776"
+            Visibility="Hidden"/>
+    </Grid>
+</Window>

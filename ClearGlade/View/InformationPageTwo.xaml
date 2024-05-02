@@ -1,0 +1,39 @@
+﻿<Page x:Class="ClearGlade.View.InformationPageTwo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClearGlade.View"
+      xmlns:viewModel="clr-namespace:ClearGlade.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="1107"
+      d:DesignWidth="876"
+      Title="InformationPageTwo">
+    <Page.DataContext>
+        <viewModel:InformationPageTwoViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                Style="{StaticResource TextBlockWidth}"
+                FontFamily="{StaticResource Montsserat}"
+                Height="196"
+                Text="ВНИМАНИЕ!"
+                FontSize="80"
+                FontWeight="Bold"/>
+
+            <Label
+                Margin="0,0,0,0"
+                Template="{StaticResource InformationPageTwo}"/>
+
+            <Button
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding NextNumberOfTicketsPageCommand}">
+                <TextBlock
+                    Style="{StaticResource ButtonTextStyle}"
+                    Text="ПРОДОЛЖИТЬ"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
